@@ -11,7 +11,7 @@ interface ChatMessage {
   isLoading?: boolean;
 }
 
-const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:4000';
+const CHAT_API_URL = '/api/chat';
 
 const QUICK_ACTIONS = [
   "What's your experience?",
@@ -59,7 +59,7 @@ export function FloatingChatWidget() {
     ]);
 
     try {
-      const response = await fetch(`${BACKEND_URL}/api/chat`, {
+      const response = await fetch(CHAT_API_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ message: text.trim() }),
