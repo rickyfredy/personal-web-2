@@ -27,6 +27,7 @@ GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
 LLM_MODEL = os.getenv("LLM_MODEL", "gemini-2.5-flash-lite")
 BACKEND_PORT = int(os.getenv("BACKEND_PORT", "4000"))
 FRONTEND_PORT = int(os.getenv("FRONTEND_PORT", "3000"))
+FRONTEND_URL = os.getenv("FRONTEND_URL", "")
 RESUME_PATH = Path(__file__).resolve().parent.parent / "frontend" / "public" / "resume.pdf"
 
 
@@ -225,12 +226,16 @@ def chat_with_gemini(user_message: str) -> str:
 # ===========================
 app = FastAPI(title="RAG Backend", version="2.0.0")
 
+_cors_origins = [
+    f"http://localhost:{FRONTEND_PORT}",
+    f"http://127.0.0.1:{FRONTEND_PORT}",
+]
+if FRONTEND_URL:
+    _cors_origins.append(FRONTEND_URL)
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        f"http://localhost:{FRONTEND_PORT}",
-        f"http://127.0.0.1:{FRONTEND_PORT}",
-    ],
+    allow_origins=_cors_origins,
     allow_methods=["POST", "GET"],
     allow_headers=["*"],
 )
