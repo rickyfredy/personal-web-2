@@ -19,7 +19,7 @@ export const experienceData = [
   },
   {
     date: "Nov 2014 — Aug 2016",
-    title: "Senior Mobile Engineer",
+    title: "Full Stack Developer",
     company: "Vertical Software Asia Pte. Ltd.",
     icon: "fa-building",
     description:
@@ -28,7 +28,7 @@ export const experienceData = [
   },
   {
     date: "May 2013 — Nov 2014",
-    title: ".Net Developer",
+    title: "Full Stack Developer",
     company: "Minamas Plantation — Jakarta, Indonesia",
     icon: "fa-seedling",
     description:
@@ -37,7 +37,7 @@ export const experienceData = [
   },
   {
     date: "Nov 2010 — Nov 2012",
-    title: "Web Developer",
+    title: "Full Stack Developer",
     company: "Bouncity Network — Jakarta, Indonesia",
     icon: "fa-network-wired",
     description:
