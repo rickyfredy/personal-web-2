@@ -80,9 +80,6 @@ export default function Home() {
             Building scalable products with engineering, AI and business strategy.
           </motion.p>
           <motion.div className="hero-buttons" variants={itemFade}>
-            <a href="/resume.pdf" download className="btn-primary">
-              <i className="fas fa-download" /> Download Resume
-            </a>
             <a href="https://www.linkedin.com/in/rickyfredy/" target="_blank" rel="noopener noreferrer" className="btn-secondary">
               <i className="fab fa-linkedin" /> LinkedIn
             </a>
